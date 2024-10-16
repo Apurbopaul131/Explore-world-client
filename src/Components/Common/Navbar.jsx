@@ -1,6 +1,23 @@
+import { useContext } from "react";
+import toast from "react-hot-toast";
 import { Link, NavLink } from "react-router-dom";
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
+import { FirebaseContext } from "../../Context/AuthContex";
 
 const Navbar = () => {
+  const { user, logout } = useContext(FirebaseContext);
+  console.log(user?.emailVerified);
+  console.log(user?.displayName);
+  const handleLogout = () => {
+    logout()
+      .then(() => {
+        toast.success("Logout successfull");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
   const pages = [
     {
       id: 1,
@@ -21,10 +38,11 @@ const Navbar = () => {
       id: 4,
       name: "My List",
       path: "/my-list",
-    }
+    },
   ];
   return (
     <div className="navbar bg-base-100">
+      <Tooltip id="my-tooltip" />
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -70,12 +88,37 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to={`/login`}>
-          <a className="btn mr-5">Login</a>
-        </Link>
-        <Link to={`/register`}>
-          <a className="btn">SignUp</a>
-        </Link>
+        {user?.emailVerified ? (
+          <div className="flex items-center gap-5">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content={user?.displayName}
+              data-tooltip-place="left"
+            >
+              <div className="w-10 rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src={user && user?.photoURL}
+                />
+              </div>
+            </div>
+            <button className="btn" onClick={handleLogout}>
+              Logout
+            </button>
+          </div>
+        ) : (
+          <div>
+            <Link to={`/login`}>
+              <a className="btn mr-5">Login</a>
+            </Link>
+            <Link to={`/register`}>
+              <a className="btn">SignUp</a>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
