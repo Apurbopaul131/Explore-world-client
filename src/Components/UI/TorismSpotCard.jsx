@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import { CiLocationOn } from "react-icons/ci";
+import { Link } from "react-router-dom";
 const TorismSpotCard = ({spotInfo}) => {
     const {
+        _id,
         countryName,
         image,
         tourisSpotLocation,
@@ -18,7 +20,7 @@ const TorismSpotCard = ({spotInfo}) => {
             <h1 className='text-2xl font-bold text-[#131313] hover:text-blue-500'>{touristSoptName}</h1>
             <p className='text-sm font-medium text-[#131313]'><span className="text-2xl font-bold">${averageCost}</span>starts form</p>
         </div>
-        <button className="btn btn-primary w-full rounded-full hover:btn-warning">View Details</button>
+       <Link to={`/tourismspot/${_id}`}><button className="btn btn-primary w-full rounded-full hover:btn-warning">View Details</button></Link>
     </div>
     );
 };

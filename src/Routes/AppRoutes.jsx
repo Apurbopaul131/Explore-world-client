@@ -8,6 +8,7 @@ import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import MyList from "../Pages/MyList";
 import Register from "../Pages/Register";
+import TourismSpot from "../Pages/TourismSpot";
 import PrivateRoute from "./PrivateRoute";
 
 
@@ -44,6 +45,13 @@ const router = createBrowserRouter([
         {
             path:"/register",
             element:<Register/>
+        },
+        {
+            path:"/tourismspot/:spotId",
+            element:<PrivateRoute>
+                <TourismSpot/>
+            </PrivateRoute>,
+            loader:({params})=>fetch(`http://localhost:5000/tourism-spot/${params.spotId}`)
         }
     ]
     },
