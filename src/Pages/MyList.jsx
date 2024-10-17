@@ -49,7 +49,7 @@ const handleEditFormMylist = (spotId) => {
   navigate(`/edit/${spotId}`);
 }
   return (
-    <div className="overflow-x-auto my-5">
+    <div className="overflow-x-auto my-12">
       <table className="table">
         {/* head */}
         <thead>

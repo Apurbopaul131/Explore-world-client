@@ -5,6 +5,7 @@ import App from "../App";
 import AddTouristSpot from "../Pages/AddTouristSpot";
 import AllTouristSpots from "../Pages/AllTouristSpots";
 import EditSpotInfo from "../Pages/EditSpotInfo";
+import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import MyList from "../Pages/MyList";
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     {
       path: "/",
       element: <App/>,
+      errorElement:<ErrorPage/>,
       children:[
         {
             path:"/",
@@ -58,7 +60,8 @@ const router = createBrowserRouter([
         },
         {
             path:"/edit/:spotId",
-            element:<EditSpotInfo/>
+            element:<EditSpotInfo/>,
+            loader:({params})=>fetch(`http://localhost:5000/tourism-spot/${params.spotId}`)
         }
     ]
     },

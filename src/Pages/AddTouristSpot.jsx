@@ -51,7 +51,7 @@ const AddTouristSpot = () => {
     TourismDetaisDatasendTosever();
   };
   return (
-    <div className="max-w-5xl mx-auto mt-10">
+    <div className="max-w-5xl mx-auto my-12">
       <Toaster />
       <div className="space-y-8 text-center">
         <h3 className="text-5xl text-[#374151] font-bold">
