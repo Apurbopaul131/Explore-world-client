@@ -37,7 +37,7 @@ const Navbar = () => {
     {
       id: 4,
       name: "My List",
-      path: "/my-list",
+      path: `/my-list/${user?.email}`,
     },
   ];
   return (

@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import AllTourisSpotCard from "../Components/UI/AllTourisSpotCard";
 
 
+
 const AllTouristSpots = () => {
     const sortTouristSpots = useLoaderData();
     console.log(sortTouristSpots);

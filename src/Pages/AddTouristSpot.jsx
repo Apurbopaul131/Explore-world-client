@@ -13,7 +13,7 @@ const AddTouristSpot = () => {
     const countryName = selactedCountry;
     const tourisSpotLocation = formData.get("location");
     const touristSpotDescription = formData.get("description");
-    const averageCost = formData.get("averagecost");
+    const averageCost = parseInt(formData.get("averagecost"));
     const travelTime = formData.get("traveltime");
     const perYearVisitors = formData.get("visitorrs");
     const image = formData.get("photo");

@@ -41,7 +41,7 @@ const Login = () => {
           toast.success(`${userCredential.user.email} signin successfully.`);
           e.target.reset();
           //navigate to expected location
-          navigate(location? location.state : "/")
+          navigate(location.state? location.state : "/")
         } else {
           console.log(userCredential.user);
           //Email verification
@@ -63,7 +63,7 @@ const Login = () => {
         toast.success(`Login succesfylly with ${result.user.email}`);
 
         //navigate to expected location
-        navigate(location? location.state : "/")
+        navigate(location.state? location.state : "/")
       })
       .catch((err)=>{
         toast.error(err.message);
@@ -78,7 +78,7 @@ const Login = () => {
         toast.success(`Login succesfylly with ${result.user.email}`);
 
         //navigate to expected location
-        navigate(location? location.state : "/")
+        navigate(location.state? location.state : "/")
       })
       .catch((err)=>{
         toast.error(err.message.value);
