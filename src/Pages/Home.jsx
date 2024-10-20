@@ -33,7 +33,7 @@ const Home = () => {
             </div>
 
             <div>
-                <h1 className="text-5xl text-[#374151] font-bold text-center">Counriessss</h1>
+                <h1 className="text-5xl text-[#374151] font-bold text-center">Countries</h1>
             <div className='grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10'>
                 {
                     countries.map((country)=><CountryCard 

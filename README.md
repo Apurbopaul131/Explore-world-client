@@ -1,9 +1,23 @@
-# React + Vite
+#Explore-world
+Description:
+**_ The home route display all users add tourism spots to the database and the six coutries desctiption.
+_** You can login using firebase.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+\*\*\* The logged user when click tourism sopt view details button on the home route the user will rerirect to view details page.This route will be private/protected means the use can not go without logged in the website.
 
-Currently, two official plugins are available:
+\*\*\* The logged user when click the six coutries card they can show avaialbe all tourism spots for specific country.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-"# Explore-world-client" 
+\*\*\* You must me logged in to the website to create new Tourism spot.
+
+\*\*\* The logged user can show all the Tourism sopts that added by him to the my list route.
+
+\*\*\* The logged user can also edit and delete the Tourism spot from my list route.This route will be private/protected route.
+
+\*\*\* The user can show all tourism spots in the all tourism sopts route.
+
+Front-end Technology:Html,css,tailwind css,Daisyui,react,react-router,firebase authentication.
+
+Backend Technology:Express,mongodb.
+
+Front-end live link:
+Backend-end live link:
